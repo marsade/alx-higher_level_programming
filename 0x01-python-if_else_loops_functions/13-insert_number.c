@@ -6,7 +6,7 @@
  * insert_node - function in c that insert a number into a sorted singly
  * linked list
  * @head: the pointer to the first node in the list
- * @number number to be in new node
+ * @number: number to be in new node
  * Return: the address of the new node or NULL if it falied
  */
 listint_t *insert_node(listint_t **head, int number)
