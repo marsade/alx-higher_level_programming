@@ -5,3 +5,4 @@ def print_last_digit(number):
         num = num[-1]
         print(num, end='')
         return (num)
+    else
