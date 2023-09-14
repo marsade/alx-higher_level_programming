@@ -2,5 +2,5 @@
 def best_score(a_dictionary):
     if not a_dictionary:
         return None
-    name = max(a_dictionary, key=a_dictionary.get) 
+    name = max(a_dictionary, key=a_dictionary.get)
     return name
