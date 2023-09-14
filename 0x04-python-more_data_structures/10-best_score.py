@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 def best_score(a_dictionary):
-    if a_dictionary is None:
+    if not a_dictionary:
         return None
-    sorted_new = sorted(a_dictionary.items(), key=lambda item: item[0])
-    name = sorted_new[-1][0]
+    name = max(a_dictionary, key=a_dictionary.get) 
     return name
