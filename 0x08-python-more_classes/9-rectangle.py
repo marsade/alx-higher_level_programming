@@ -77,6 +77,16 @@ class Rectangle:
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
 
+    @classmethod
+    def square(cls, size=0):
+        """return a square rect
+        Args:
+            size (int): size of the rect
+        Returns:
+            a new instance
+        """
+        return (cls(size, size))
+
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """finds the bigger rectangle
@@ -93,13 +103,3 @@ class Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
         if rect_1.area() > rect_2.area() or rect_1.area() == rect_2.area():
             return rect_1
-
-    @classmethod
-    def square(cls, size=0):
-        """return a square rect
-        Args:
-            size (int): size of the rect
-        Returns:
-            a new instance
-        """
-        return cls(size, size)
