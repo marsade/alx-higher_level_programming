@@ -1,0 +1,21 @@
+Usage
+=====
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(2, 3)
+5
+>>> add_integer(6, 9.0)
+15
+>>> add_integer(6,)
+104
+Non numbers
+=====
+gives an error both or either of the numbers are not integers or floats
+>>> add_integer("hello")
+Traceback (most recent call last):
+TypeError: a must be an integer
+>>> add_integer("hello", "world")
+Traceback (most recent call last):
+TypeError: a must be an integer
+>>> add_integer([1, 2, 3], [4, 5, 6])
+Traceback (most recent call last):
+TypeError: a must be an integer
