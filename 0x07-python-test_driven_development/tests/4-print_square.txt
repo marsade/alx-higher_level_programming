@@ -23,6 +23,7 @@ Usage
 ###############
 ###############
 >>> print_square(0)
+
 Errors
 ======
 >>> print_square(0.5)
