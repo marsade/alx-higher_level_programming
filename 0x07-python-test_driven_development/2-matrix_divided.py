@@ -28,8 +28,8 @@ def matrix_divided(matrix, div):
             raise TypeError("Each row of the matrix must have the same size")
         new_row = []
         for element in row:
-                res = "{:.2f}".format(element/div)
-                new_row.append(float(res))
+            res = "{:.2f}".format(element/div)
+            new_row.append(float(res))
         new_matrix.append(new_row)
 
     return new_matrix
