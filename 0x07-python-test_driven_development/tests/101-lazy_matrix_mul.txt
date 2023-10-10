@@ -6,3 +6,6 @@ Usage
  [15 22]]
 >>> print(lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
 [[13 16]]
+>>> print(lazy_matrix_mul("hi", [[3, 4], [5, 6]]))
+Traceback (most recent call last):
+numpy.core._exceptions._UFuncNoLoopError: ufunc 'matmul' did not contain a loop with signature matching types (dtype('<U2'), dtype('int64')) -> None
