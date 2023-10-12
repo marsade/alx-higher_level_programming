@@ -39,11 +39,13 @@ Same numbers
 >>> my_list2.print_sorted()
 [1, 1, 1, 1]
 
-Errors:
+Passed a list
 =======
->>> new_list.print_sorted()
-Traceback (most recent call last):
-NameError: name 'new_list' is not defined
+>>> a = [1, 9, 4]
+>>> my_list = MyList(a)
+>>> my_list.print_sorted()
+[1, 4, 9]
+>>>
 
 Parent object
 ========
@@ -53,3 +55,9 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 AttributeError: 'list' object has no attribute 'print_sorted'
 >>>
+
+Errors:
+=======
+>>> new_list.print_sorted()
+Traceback (most recent call last):
+NameError: name 'new_list' is not defined
