@@ -3,5 +3,5 @@
 
 
 class Geometry:
-    """Geometry class"""
+    """the Geometry class"""
     pass
