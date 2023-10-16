@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""First Rectangle"""
+"""First Rectangle class"""
 from base import Base
 
 
@@ -7,11 +7,11 @@ class Rectangle(Base):
     """Rectangle class that inherits from Base"""
     def __init__(self, width, height, x=0, y=0, id=None):
         """initialize a new Rectangle"""
-        super().__init__(id)
         self.__width = width
         self.__height = height
         self.__x = x
         self.__y = y
+        super().__init__(id)
 
     @property
     def width(self):
