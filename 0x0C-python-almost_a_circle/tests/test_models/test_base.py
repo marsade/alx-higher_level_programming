@@ -12,3 +12,6 @@ class BaseTest(unittest.TestCase):
     def test_init(self):
         self.assertEqual(self.num1.id, 1)
         self.assertEqual(self.num2.id, 10)
+
+if __name__ == '__main__':
+    unittest.main()
