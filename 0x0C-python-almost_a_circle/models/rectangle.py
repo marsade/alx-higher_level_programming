@@ -34,6 +34,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
+        """sets and validates height"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value <= 0:
@@ -47,6 +48,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
+        """sets and validates x value"""
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         elif value < 0:
@@ -60,8 +62,14 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
+        """sets and validates the y value"""
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         elif value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """returns the area of the rectangle"""
+        return self.__width * self.__height
+
