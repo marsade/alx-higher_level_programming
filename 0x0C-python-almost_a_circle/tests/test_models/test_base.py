@@ -5,13 +5,12 @@ from models.base import Base
 
 
 class BaseTest(unittest.TestCase):
-    def setUp(self):
-        self.num1 = Base()
-        self.num2 = Base(10)
-
     def test_init(self):
-        self.assertEqual(self.num1.id, 1)
-        self.assertEqual(self.num2.id, 10)
+        num1 = Base()
+        num2 = Base()
+        num3 = Base(10)
+        self.assertEqual(num1.id, num2.id - 1)
+        self.assertEqual(num3.id, 10)
 
 if __name__ == '__main__':
     unittest.main()

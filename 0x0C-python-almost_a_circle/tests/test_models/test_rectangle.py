@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Unittests for Rectangle class"""
-import unittest
-from models.rectangle import Rectangle
 from models.base import Base
+from models.rectangle import Rectangle
+import unittest
 
 
 class RectangleTest(unittest.TestCase):
@@ -28,6 +28,18 @@ class RectangleTest(unittest.TestCase):
 
     def test_isstance(self):
         self.assertIsInstance(Rectangle(1, 9), Base)
+    
+    def test_exceptions(self):
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(10, 2)
+            r1.width = -20
+        with self.assertRaises(TypeError):
+            Rectangle(10, "2")
+        with self.assertRaises(TypeError):
+            r2 = Rectangle(10, 2)
+            r2.x = {}
+        with self.assertRaises(ValueError):
+            Rectangle(10, 2, 3, -1)
 
 if __name__ == '__main__':
     unittest.main()
