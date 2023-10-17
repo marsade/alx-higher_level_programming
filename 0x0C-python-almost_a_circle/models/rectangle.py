@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """First Rectangle class"""
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -80,10 +80,3 @@ class Rectangle(Base):
             if i != self.__height - 1:
                 print("")
         print()
-r1 = Rectangle(4, 6)
-r1.display()
-
-print("---")
-
-r1 = Rectangle(2, 2)
-r1.display()
