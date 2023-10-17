@@ -3,9 +3,12 @@
 from models.base import Base
 from models.rectangle import Rectangle
 import unittest
+from unittest.mock import patch
+import io
 
 
 class RectangleTest(unittest.TestCase):
+    """Test initialization of the Rectangle class"""
     def test_init(self):
         r1 = Rectangle(10, 2)
         r2 = Rectangle(2, 10)
@@ -41,6 +44,10 @@ class RectangleTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(10, 2, 3, -1)
 
+
+class TestRectangle_Area(unittest.TestCase):
+    """test the results from the area method"""
+    
     def test_area(self):
         r1 = Rectangle(3, 2)
         r2 = Rectangle(2, 10)
@@ -49,6 +56,35 @@ class RectangleTest(unittest.TestCase):
         self.assertEqual(r1.area(), 6)
         self.assertEqual(r2.area(), 20)
         self.assertEqual(r3.area(), 56)
+        
+    def test_area_one_arg(self):
+        r = Rectangle(1, 3, 4, 5,)
+        with self.assertRaises(TypeError):
+            r.area(10)
 
+
+class TestRectangle_Display(unittest.TestCase):
+    """Test the display method of the rectangle."""
+    def test_display(self):
+        r1 = Rectangle(4, 6)
+        with patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
+            r1.display()
+            rec_output = mock_stdout.getvalue()
+        ex_output = "####\n####\n####\n####\n####\n####\n"
+        self.assertEqual(rec_output, ex_output)
+
+    def test_display_five_args(self):
+        r1 = Rectangle(2, 2, 5, 6, 7)
+        with patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
+            r1.display()
+            rec_output = mock_stdout.getvalue()
+        ex_output = "##\n##\n"
+        self.assertEqual(rec_output, ex_output)
+
+    def test_display_one_arg(self):
+        r = Rectangle(2, 5, 6, 6)
+        with self.assertRaises(TypeError):
+            r.display(65, 7)
+  
 if __name__ == '__main__':
     unittest.main()
