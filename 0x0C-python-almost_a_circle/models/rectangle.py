@@ -2,7 +2,6 @@
 """First Rectangle class"""
 from base import Base
 
-
 class Rectangle(Base):
     """Rectangle class that inherits from Base"""
 
@@ -80,3 +79,12 @@ class Rectangle(Base):
             if i != self.__height - 1:
                 print("")
         print()
+
+    def __str__(self):
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+
+r1 = Rectangle(4, 6, 2, 1, 12)
+print(r1)
+
+r2 = Rectangle(5, 5, 1)
+print(r2)
