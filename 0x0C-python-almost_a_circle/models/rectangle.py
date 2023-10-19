@@ -7,11 +7,11 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """initialize a new Rectangle"""
-        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
 
     @property
     def width(self):
@@ -73,18 +73,17 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
+        if self.__y > 0:
+            for i in range(self.__y):
+                print()
         for i in range(self.__height):
+            if self.__x > 0:
+                for i in range(self.__x):
+                    print(" ", end="")
             for j in range(self.__width):
                 print("#", end="")
             if i != self.__height - 1:
                 print("")
-        print()
 
     def __str__(self):
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
-
-r1 = Rectangle(4, 6, 2, 1, 12)
-print(r1)
-
-r2 = Rectangle(5, 5, 1)
-print(r2)
