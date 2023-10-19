@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """First Rectangle class"""
-from models.base import Base
+from base import Base
+
 
 class Rectangle(Base):
     """Rectangle class that inherits from Base"""
@@ -86,4 +87,7 @@ class Rectangle(Base):
                 print("")
 
     def __str__(self):
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        """returns a string representation of the object"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                       self.x, self.y,
+                                                       self.width, self.height)
