@@ -10,11 +10,12 @@ if __name__ == '__main__':
     usr = sys.argv[1]
     password = sys.argv[2]
     db_name = sys.argv[3]
-    db = MySQLdb.connect(host='localhost', port=3306, user=usr, passwd=password, db=db_name)
+    db = MySQLdb.connect(host='localhost', port=3306, user=usr,
+                         passwd=password, db=db_name)
     cur = db.cursor()
     cur.execute("SELECT * FROM states")
     rows = cur.fetchall()
     for row in rows:
-        print (row)
+        print(row)
     cur.close()
     db.close()
