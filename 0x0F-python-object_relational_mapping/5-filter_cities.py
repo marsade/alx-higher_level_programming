@@ -18,7 +18,7 @@ if __name__ == '__main__':
                 FROM cities \
                 INNER JOIN states \
                 ON states.id = cities.state_id \
-                WHERE states.name = %s ", (match, ));
+                WHERE states.name = %s ", (match, ))
     rows = cur.fetchall()
     tmp = set(row[0] for row in rows)
     print(*tmp, sep=", ")
