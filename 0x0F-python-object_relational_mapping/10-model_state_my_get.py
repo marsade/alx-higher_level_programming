@@ -12,7 +12,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     sess = Session()
-    
+
     instance = sess.query(State).filter(State.name == (sys.argv[4],))
     try:
         print(instance[0].id)
