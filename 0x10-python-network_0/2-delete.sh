@@ -1,3 +1,3 @@
 #!/bin/bash
-# This script displays the body of a response
+# This script sends a DELETE request to the server
 curl -X DELETE "$1" -sL
