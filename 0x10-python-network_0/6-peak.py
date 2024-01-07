@@ -3,6 +3,7 @@
 
 
 def find_peak(list_of_integers):
+    """FInd the peak of a list of Integers"""
     low = 0
     high = len(list_of_integers) - 1
 
