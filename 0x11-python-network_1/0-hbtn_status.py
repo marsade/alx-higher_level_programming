@@ -9,5 +9,5 @@ if __name__ == '__main__':
         page = repsonse.read()
         print("Body response:")
         print("    - type: {}".format(type(page)))
-        print("    - content {}".format(page))
+        print("    - content: {}".format(page))
         print("    - utf8 content: {}".format(page.decode('utf8')))
