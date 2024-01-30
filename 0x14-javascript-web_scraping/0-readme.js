@@ -7,6 +7,6 @@ if (args.length > 1) {
   const fs = require('fs');
   fs.readFile(args[0], (err, inputD) => {
     if (err) throw err;
-      console.log(inputD.toString());
-  })
+    console.log(inputD.toString());
+  });
 }
