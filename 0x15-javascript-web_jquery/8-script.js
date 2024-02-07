@@ -1,11 +1,11 @@
-$.get("https://swapi-api.alx-tools.com/api/films/?format=json", function(data) {
-  let movies = data.results;
+$.get('https://swapi-api.alx-tools.com/api/films/?format=json', function (data) {
+  const movies = data.results;
   movies.forEach((movie) => {
-    let title = movie.title
-    let text = $('<li></li>').text(title);
+    const title = movie.title;
+    const text = $('<li></li>').text(title);
     $('#list_movies').append(text);
-  })
+  });
 })
-.fail(function(error) {
-  console.error("Error fetching character data:", error);
-});
+  .fail(function (error) {
+    console.error('Error fetching character data:', error);
+  });

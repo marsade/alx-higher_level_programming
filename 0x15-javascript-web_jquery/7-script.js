@@ -1,8 +1,8 @@
-$.get("https://swapi-api.alx-tools.com/api/people/5/?format=json", function(data) {
+$.get('https://swapi-api.alx-tools.com/api/people/5/?format=json', function (data) {
   // Extract the character name from the response data
-  let characterName = data.name;
-  $("#character").text(characterName);
+  const characterName = data.name;
+  $('#character').text(characterName);
 })
-.fail(function(error) {
-  console.error("Error fetching character data:", error);
-});
+  .fail(function (error) {
+    console.error('Error fetching character data:', error);
+  });
